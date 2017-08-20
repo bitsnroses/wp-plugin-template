@@ -29,7 +29,7 @@ load_plugin_textdomain('wp-plugin-template', false, basename( dirname( __FILE__ 
  * Add or remove files to the array as needed.
  */
 array_map(function ($file) use ($sage_error) {
-  $file = "/includes/{$file}.php";
+  $file = plugin_dir_path( __FILE__ ) . "/includes/{$file}.php";
   if ( file_exists($file) ) {
     require_once $file;
   }
